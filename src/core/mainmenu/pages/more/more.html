@@ -1,21 +1,22 @@
 <ion-header>
     <ion-navbar core-back-button>
-        <ion-title><core-format-text [text]="siteName" contextLevel="system" [contextInstanceId]="0"></core-format-text></ion-title>
+        <!-- <ion-title><core-format-text [text]="siteName" contextLevel="system" [contextInstanceId]="0"></core-format-text></ion-title> -->
+        <img src="assets/img/login_logo.png" class="core-header-logo" [alt]="siteName" style="display: inline-block;width:38%;margin-left: 10px;">        
     </ion-navbar>
 </ion-header>
 <ion-content>
     <ion-list>
-        <a ion-item core-user-link [userId]="siteInfo.userid" text-wrap>
+        <a ion-item core-user-link [userId]="siteInfo.userid" text-wrap style=" background-color:#50c6e0;">
             <ion-avatar core-user-avatar [user]="siteInfo" item-start></ion-avatar>
             <h2>{{siteInfo.fullname}}</h2>
-            <ion-note class="core-note-block"><core-format-text [text]="siteName" contextLevel="system" [contextInstanceId]="0" [wsNotFiltered]="true"></core-format-text></ion-note>
-            <ion-note class="core-note-block">{{ siteUrl }}</ion-note>
+            <!-- <ion-note class="core-note-block"><core-format-text [text]="siteName" contextLevel="system" [contextInstanceId]="0" [wsNotFiltered]="true"></core-format-text></ion-note>
+            <ion-note class="core-note-block">{{ siteUrl }}</ion-note> -->
         </a>
         <ion-item-divider></ion-item-divider>
         <ion-item text-center *ngIf="(!handlers || !handlers.length) && !handlersLoaded">
             <ion-spinner></ion-spinner>
         </ion-item>
-        <a ion-item *ngFor="let handler of handlers" [ngClass]="['core-moremenu-handler', handler.class || '']" (click)="openHandler(handler)" title="{{ handler.title | translate }}" detail-push>
+        <a ion-item  *ngFor="let handler of handlers" [ngClass]="['core-moremenu-handler', handler.class || '']" (click)="openHandler(handler)" title="{{ handler.title | translate }}" detail-push>
             <core-icon [name]="handler.icon" item-start></core-icon>
             <h2>{{ handler.title | translate}}</h2>
             <ion-badge item-end *ngIf="handler.showBadge" [hidden]="handler.loading || !handler.badge">{{handler.badge}}</ion-badge>
@@ -35,14 +36,21 @@
             <core-icon name="fa-qrcode" item-start aria-hidden="true"></core-icon>
             <h2>{{ 'core.scanqr' | translate }}</h2>
         </a>
-        <a *ngIf="showWeb" ion-item [href]="siteInfo.siteurl" core-link autoLogin="yes" title="{{ 'core.mainmenu.website' | translate }}">
+        <div *ngFor="let item of customItems">
+        <a *ngIf="showWeb" ion-item [href]="siteInfo.siteurl" core-link [capture]="item.type == 'app'" [inApp]="item.type == 'inappbrowser'"autoLogin="yes" title="{{ 'core.mainmenu.website' | translate }}">
             <ion-icon name="globe" item-start aria-hidden="true"></ion-icon>
             <h2>{{ 'core.mainmenu.website' | translate }}</h2>
         </a>
-        <a *ngIf="showHelp" ion-item [href]="docsUrl" core-link autoLogin="no" title="{{ 'core.mainmenu.help' | translate }}">
-            <ion-icon name="help-buoy" item-start aria-hidden="true"></ion-icon>
-            <h2>{{ 'core.mainmenu.help' | translate }}</h2>
+    </div>
+        <a *ngIf="showHelp" ion-item (click)="openFaq()" >
+            <ion-icon name="help" item-start aria-hidden="true" ></ion-icon>
+            <h2>FAQ</h2>
+
         </a>
+        <!-- <a *ngIf="showHelp" ion-item [href]="docsUrl" core-link autoLogin="no" title="{{ 'core.mainmenu.help' | translate }}">
+            <ion-icon name="help-buoy" item-start aria-hidden="true" ></ion-icon>
+            <h2>{{ 'core.mainmenu.help' | translate }}</h2>
+        </a> -->
         <a ion-item (click)="openSitePreferences()" title="{{ 'core.settings.preferences' | translate }}">
             <core-icon name="fa-wrench" item-start></core-icon>
             <h2>{{ 'core.settings.preferences' | translate }}</h2>
@@ -51,8 +59,8 @@
             <ion-icon name="log-out" item-start aria-hidden="true"></ion-icon>
             <h2>{{ logoutLabel | translate }}</h2>
         </a>
-        <ion-item-divider></ion-item-divider>
-        <a ion-item (click)="openAppSettings()" title="{{ 'core.settings.appsettings' | translate }}">
+        <!-- <ion-item-divider></ion-item-divider> -->
+        <a ion-item (click)="openAppSettings()" title="{{ 'core.settings.appsettings' | translate }}" >
             <core-icon name="fa-cogs" item-start></core-icon>
             <h2>{{ 'core.settings.appsettings' | translate }}</h2>
         </a>

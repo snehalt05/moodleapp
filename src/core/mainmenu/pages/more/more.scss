@@ -25,7 +25,9 @@ ion-app.app-root page-core-mainmenu-more {
         }
         &.item-md {
             background-color: $core-more-background-md;
-            color: $core-more-color-md;
+             // $orange-shade
+            color:$core-more-color-md;
+              // $dark-blue
             p {
                 color: $core-more-color-md;
             }
@@ -46,7 +48,8 @@ ion-app.app-root page-core-mainmenu-more {
     }
 
 	ion-icon {
-		color: $core-more-icon;
+		color:$dark-blue;
+        // $core-more-icon
 	}
 
     .item-divider {
@@ -95,3 +98,6 @@ ion-app.app-root page-core-mainmenu-more {
         }
     }
 }
+
+
+

@@ -24,7 +24,6 @@ import { CoreMainMenuProvider, CoreMainMenuCustomItem } from '../../providers/ma
 import { CoreLoginHelperProvider } from '@core/login/providers/helper';
 import { CoreContentLinksHelperProvider } from '@core/contentlinks/providers/helper';
 import { TranslateService } from '@ngx-translate/core';
-
 /**
  * Page that displays the list of main menu options that aren't in the tabs.
  */
@@ -75,7 +74,7 @@ export class CoreMainMenuMorePage implements OnDestroy {
      * View loaded.
      */
     ionViewDidLoad(): void {
-        // Load the handlers.
+       // Load the handlers.
         this.subscription = this.menuDelegate.getHandlers().subscribe((handlers) => {
             this.allHandlers = handlers;
 
@@ -136,6 +135,7 @@ export class CoreMainMenuMorePage implements OnDestroy {
 
         this.mainMenuProvider.getCustomMenuItems().then((items) => {
             this.customItems = items;
+            console.log(this.customItems)
         });
     }
 
@@ -206,5 +206,9 @@ export class CoreMainMenuMorePage implements OnDestroy {
      */
     logout(): void {
         this.sitesProvider.logout();
+    }
+
+    openFaq(){
+        this.navCtrl.push('CoreMainmenuPagesFaqPage');
     }
 }

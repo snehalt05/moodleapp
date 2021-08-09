@@ -24,5 +24,24 @@ ion-app.app-root page-core-courses-dashboard {
         @include float(start);
         @include margin(12px, 12px, null, 12px);
     }
+
+    .item-divider-md{
+        background-color:#50c6e0;
+        color:#212a2e;
+    }
+   .addon-block-html{
+       display: none;
+   }
+   .select-text{
+       color:black;
+   }
+//    .item-radio-checked.item-md ion-label{
+//     color:black;
+//    }
+//    .radio-icon radio-checked{
+//     color:black;
+//    }
+
+   
 }
 

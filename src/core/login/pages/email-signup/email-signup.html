@@ -62,11 +62,17 @@
         <form ion-list *ngIf="allRequiredSupported && settingsLoaded && settings && !ageDigitalConsentVerification" [formGroup]="signupForm" (ngSubmit)="create($event)" #signupFormEl>
             <ion-item text-wrap text-center>
                 <!-- If no sitename show big siteurl. -->
-                <p *ngIf="!siteName" padding class="item-heading">{{siteUrl}}</p>
+                <!-- <p *ngIf="!siteName" padding class="item-heading">{{siteUrl}}</p> -->
                 <!-- If sitename, show big sitename and small siteurl. -->
-                <p *ngIf="siteName" padding class="item-heading"><core-format-text [text]="siteName" [filter]="false"></core-format-text></p>
-                <p *ngIf="siteName">{{siteUrl}}</p>
+                <!-- <p *ngIf="siteName" padding class="item-heading"><core-format-text [text]="siteName" [filter]="false"></core-format-text></p>
+                <p *ngIf="siteName">{{siteUrl}}</p> -->
+                <div class="core-login-site-logo">
+                    <!-- Show site logo or a default image. -->
+                    <!-- <img *ngIf="logoUrl" [src]="logoUrl" role="presentation" onError="this.src='assets/img/login_logo.png'"> -->
+                    <img src="assets/img/login_logo.png" role="presentation">
+                </div>
             </ion-item>
+           
 
             <!-- Username and password. -->
             <ion-item-divider text-wrap>
@@ -150,7 +156,7 @@
 
             <!-- Submit button. -->
             <ion-item padding>
-                <button ion-button block color="primary" type="submit">{{ 'core.login.createaccount' | translate }}</button>
+                <button ion-button block style="background-color:#50c6e0;" type="submit">{{ 'core.login.createaccount' | translate }}</button>
             </ion-item>
         </form>
     </core-loading>

@@ -30,7 +30,10 @@ $red:             #cb3d4d;
 $orange:          #f98012; // Accent (never text).
 $yellow:          #fbad1a; // Accent (never text).
 $purple:          #8e24aa; // Accent (never text).
-
+$sky-blue:        #45b6fe;
+$light-green:     #50c6e0;
+$orange-shade:    #f27927;
+$dark-blue:       #212a2e;
 // Branded apps customization
 // --------------------------------------------------
 @import "bmma";
@@ -47,12 +50,12 @@ $green-dark:      darken($green, 10%) !default;
 $red-light:       mix($red, white, 20%) !default;
 $red-dark:        darken($red, 10%) !default;
 
-$orange-light:    lighten($orange, 10%) !default;
+ $orange-light:    lighten($orange, 10%) !default;
 
 $yellow-light:    mix($yellow, white, 20%) !default;
 $yellow-dark:     mix($yellow, black, 40%) !default;
 
-$core-color:          $orange !default;
+$core-color:          $white !default;
 $core-color-light:    lighten($core-color, 10%) !default;
 $core-color-dark:     darken($core-color, 10%) !default;
 
@@ -136,10 +139,10 @@ $subdued-text-color:         $gray-darker !default;
 
 $list-background-color:      $white !default;
 
-$tabs-background:            $gray-darker !default;
+$tabs-background:            $white !default;
 $tabs-border-color:          #b2b2b2 !default;
-$tabs-tab-color-active:      $core-color !default;
-$tabs-tab-color-inactive:    $white !default;
+$tabs-tab-color-active:      $light-green !default;
+$tabs-tab-color-inactive:    #b2b2b2 !default;
 $ion-tabs-badge-color:       $tabs-tab-color-active !default;
 
 $text-input-highlight-color-valid: $green !default;
@@ -306,7 +309,6 @@ $core-user-profile-communication-icons-color: $core-color !default;
 $core-rte-min-height: 80px;
 
 $core-toolbar-button-image-width: 32px;
-
 $core-text-hightlight-background-color: lighten($blue, 40%) !default;
 
 // Timer variables.
@@ -645,3 +647,29 @@ $fa-font-path: $font-path;
 
 // Dark mode.
 @import "dark";
+
+ion-app.app-root .item-radio-checked {
+  background-color: $light-green !important;
+}
+
+.button-inner ion-icon{
+  color: #50c6e0;
+}
+
+.button-inner .core-button-select-text{
+  color: black;
+}
+// .core-user-profile-handler ion-icon{
+//   color: black;
+// }
+.action-sheet-wrapper
+{ .action-sheet-title
+  {
+    color: black !important;
+}
+.action-sheet-selected{
+  color: black !important;
+  background-color: #50c6e0 !important;
+}
+
+}

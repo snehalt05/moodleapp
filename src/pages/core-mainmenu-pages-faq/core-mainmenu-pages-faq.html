@@ -1,0 +1,65 @@
+<!--
+  Generated template for the CoreMainmenuPagesFaqPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar core-back-button>
+      <ion-title>FAQ</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+<ion-content padding>
+  
+  <ion-list *ngFor="let faq of  faqData;let i=index">
+   <!--<ion-icon name={{icon}} (click)="iconClick(faq)"></ion-icon> -->
+   <div style="display: flex;color:white"><h3 (click)="faq['display']=!faq['display'];">{{faq.question}}</h3></div>
+   <p style="color:white;font-size: 18px;" *ngIf="faq['display']"><b>Ans –</b>{{faq.answers}}</p>
+  <hr style="color: black;font-size: 25px;">
+  </ion-list>
+  
+   <!-- <h3><b>Q1. Is there any eligibility criteria for this data science program?</b></h3>
+  <p>
+    <b>Ans –</b> The learner must have the HSC Certificate (Standard 12th in India) or equivalent. No 
+pre-requisites or experience is required. The course covers every detail required to acquire 
+the fundamental skill set to start a data science career path. 
+  </p><br>
+
+  <h3><b>Q2.Do I need a computer system (desktop/laptop) for this program? If so, what 
+    are the system specifications?</b></h3>
+  <p>
+    <b>Ans –</b> Yes, you would need a desktop or a laptop. A computer with at least i5 (or equally 
+    powerful processor) and 8 GB RAM is recommended. The computer should have built-in 
+    speaker or headphone facility. The operating system can be Windows 8 (or better), or Mac 
+    OS 10.12 (Sierra) or better/higher. A stable internet connection with good speed, and a 
+    browser will be needed. If you want to install Python or R, please refer to the specific system 
+    requirements for installing their respective versions.
+  </p><br>
+
+  <h3><b>Q3. What languages does Rubiversity support? </b></h3>
+  <p>
+    <b>Ans –</b>In the present version, Rubiversity LMS offers courses in English.</p><br>
+
+  <h3><b>Q4. Do I have to start my course at a certain time?</b></h3>
+  <p>
+    <b>Ans –</b> The course is self-paced course.  It can be started at any time. The course should be 
+    completed within 2 months (60 calendar days) of starting the course.</p><br>
+
+    <h3><b>Q5.  What can I expect to get when I complete the course? </b></h3>
+  <p>
+    <b>Ans –</b> You will receive a certificate of completion which will serve as a pre-requisite for other 
+    courses. You can explore a wide range of courses in the data science field as per your career 
+    path and persona.</p><br>
+
+    <h3><b>Q6. What courses does rubiVersity offer? </b></h3>
+  <p>
+    <b>Ans –</b> rubiVersity offers courses in the field of data science. The courses are uniquely 
+    designed, industry and future-ready, learning paths that evolve into modular courses from 
+    Foundational level to Masters level, delivering a unique learning experience. 
+    We are always building new courses to ensure that our users can learn the best technology 
+    in market in a fully elaborated course. </p><br> -->
+
+
+</ion-content>

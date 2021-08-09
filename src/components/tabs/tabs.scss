@@ -37,7 +37,8 @@ ion-app.app-root .core-tabs-bar {
         }
 
         &[aria-selected=true] {
-            color: $core-top-tabs-color-active !important;
+            color: #50c6e0 !important;
+            // $core-top-tabs-color-active !important;
             border-bottom-color: $core-top-tabs-border-active !important;
         }
 
@@ -153,4 +154,8 @@ ion-app.app-root.ios, ion-app.app-root.md {
         top: 0 !important;
         height: 100% !important;
     }
+  
 }
+// .tab-slide swiper-slide ng-star-inserted swiper-slide-active{
+//     color:#50c6e0;
+// }

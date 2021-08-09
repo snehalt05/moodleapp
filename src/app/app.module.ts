@@ -14,7 +14,7 @@
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule, COMPILER_OPTIONS, Injector } from '@angular/core';
+import { NgModule, COMPILER_OPTIONS, Injector} from '@angular/core';
 import { IonicApp, IonicModule, Platform, Content, ScrollEvent, Config, Refresher } from 'ionic-angular';
 import { assert } from 'ionic-angular/util/util';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -360,6 +360,7 @@ export const WP_PROVIDER: any = null;
         {provide: JitCompilerFactory, useClass: JitCompilerFactory, deps: [COMPILER_OPTIONS]},
         {provide: LocationStrategy, useClass: MockLocationStrategy},
     ]
+   
 })
 export class AppModule {
     constructor(

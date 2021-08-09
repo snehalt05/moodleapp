@@ -95,7 +95,7 @@ ion-app.app-root {
     overflow: inherit;
     ion-icon, core-icon {
       vertical-align: bottom;
-    }
+     }
   }
 
   .item[detail-push] {
@@ -712,7 +712,9 @@ ion-app.app-root {
       max-height: none;
     }
   }
-
+  ion-alert .alert-button{
+    color:#50c6e0;
+  }
   ion-toast.core-toast-success .toast-wrapper{
       background: $green-dark;
   }
@@ -1322,4 +1324,5 @@ ion-app.app-root {
       display: none !important;
     }
   }
+
 }

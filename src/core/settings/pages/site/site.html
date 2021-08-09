@@ -14,8 +14,8 @@
             <ion-list>
                 <ion-item *ngIf="siteInfo" text-wrap>
                     <h2>{{siteInfo.fullname}}</h2>
-                    <ion-note class="core-note-block"><core-format-text [text]="siteName" contextLevel="system" [contextInstanceId]="0" [wsNotFiltered]="true"></core-format-text></ion-note>
-                    <ion-note class="core-note-block">{{ siteUrl }}</ion-note>
+                    <!-- <ion-note class="core-note-block"><core-format-text [text]="siteName" contextLevel="system" [contextInstanceId]="0" [wsNotFiltered]="true"></core-format-text></ion-note>
+                    <ion-note class="core-note-block">{{ siteUrl }}</ion-note> -->
                 </ion-item>
                 <ion-item-divider></ion-item-divider>
                 <a ion-item *ngIf="isIOS" (click)="openHandler('CoreSharedFilesListPage', {manage: true, siteId: siteId, hideSitePicker: true})" [title]="'core.sharedfiles.sharedfiles' | translate" [class.core-split-item-selected]="'CoreSharedFilesListPage' == selectedPage" detail-push>

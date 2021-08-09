@@ -9,7 +9,7 @@
     </ion-refresher>
     <core-loading [hideUntil]="userLoaded">
         <ion-list *ngIf="user && !isDeleted && isEnrolled">
-            <ion-item text-center>
+            <ion-item text-center  style=" background-color:#50c6e0;">
                 <ion-avatar core-user-avatar class="item-avatar-center" [user]="user" [userId]="user.id" [linkProfile]="false" [checkOnline]="true">
                     <ion-icon name="create" class="core-icon-foreground" *ngIf="canChangeProfilePicture" (click)="changeProfilePicture()"></ion-icon>
                 </ion-avatar>
@@ -25,8 +25,8 @@
                 <ion-row no-padding justify-content-between *ngIf="communicationHandlers && communicationHandlers.length">
                     <ion-col align-self-center *ngFor="let comHandler of communicationHandlers" text-center>
                         <a (click)="handlerClicked($event, comHandler)" [ngClass]="['core-user-profile-handler', comHandler.class]" title="{{comHandler.title | translate}}" tappable>
-                            <core-icon [name]="comHandler.icon"></core-icon>
-                            <p>{{comHandler.title | translate}}</p>
+                            <core-icon [name]="comHandler.icon" style="color: black;"></core-icon>
+                            <p style="color: black;">{{comHandler.title | translate}}</p>
                         </a>
                     </ion-col>
                 </ion-row>

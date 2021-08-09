@@ -122,11 +122,13 @@ ion-app.app-root addon-calendar-calendar {
         @include media-breakpoint-up(md) {
             .addon-calendar-day-number {
                 text-align: left;
+                
             }
         }
 
         &.today .addon-calendar-day-number span {
-            background-color: $calendar-today-bgcolor;
+            background-color:#50c6e0;
+            //  $calendar-today-bgcolor;
             color: $calendar-today-color;
 
             border-radius: 50%;
@@ -221,5 +223,8 @@ ion-app.app-root addon-calendar-calendar {
         height: 16px;
         display: inline-block;
         vertical-align: bottom;
+    }
+    .addon-calendar-navigation{
+        background-color:#50c6e0;
     }
 }

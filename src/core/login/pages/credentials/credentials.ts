@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Component, ViewChild, ElementRef, OnDestroy } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnDestroy,AfterViewInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
 import { CoreAppProvider } from '@providers/app';
@@ -26,7 +26,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CoreConfigConstants } from '../../../../configconstants';
 import { CoreCustomURLSchemes } from '@providers/urlschemes';
 import { Subscription } from 'rxjs';
-
+import { Keyboard } from 'ionic-angular';
 /**
  * Page to enter the user credentials.
  */
@@ -38,7 +38,7 @@ import { Subscription } from 'rxjs';
 export class CoreLoginCredentialsPage implements OnDestroy {
 
     @ViewChild('credentialsForm') formElement: ElementRef;
-
+    @ViewChild('user') user;
     credForm: FormGroup;
     siteUrl: string;
     siteChecked = false;
@@ -52,14 +52,14 @@ export class CoreLoginCredentialsPage implements OnDestroy {
     isFixedUrlSet = false;
     showForgottenPassword = true;
     showScanQR: boolean;
-
+    focus:boolean;
     protected siteConfig;
     protected eventThrown = false;
     protected viewLeft = false;
     protected siteId: string;
     protected urlToOpen: string;
     protected valueChangeSubscription: Subscription;
-
+     public showPassword: boolean = false;
     constructor(private navCtrl: NavController,
             navParams: NavParams,
             fb: FormBuilder,
@@ -129,8 +129,15 @@ export class CoreLoginCredentialsPage implements OnDestroy {
             this.siteChecked = true;
             this.pageLoaded = true;
         }
+        console.log("ionViewDidLoad");
+        setTimeout(() => {
+            console.log(this.user)
+            //   Keyboard.show() // for android
+              this.user.setFocus();
+            },150); //a least 150ms.
+        
     }
-
+   
     /**
      * View destroyed.
      */
@@ -367,4 +374,19 @@ export class CoreLoginCredentialsPage implements OnDestroy {
     ngOnDestroy(): void {
         this.valueChangeSubscription && this.valueChangeSubscription.unsubscribe();
     }
+    // ngAfterViewInit() {            
+    //     this.user.nativeElement.focus();
+    // }
+    public onPasswordToggle(): void {
+        console.log(this.showPassword)
+        this.showPassword == true;
+      }
+    //   ionViewLoaded() {
+
+    //     setTimeout(() => {
+    //     //   Keyboard.show() // for android
+    //       this.user.setFocus();
+    //     },150); //a least 150ms.
+    
+    //  }
 }
