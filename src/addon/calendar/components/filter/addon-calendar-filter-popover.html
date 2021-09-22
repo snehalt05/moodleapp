@@ -7,7 +7,8 @@
     <ion-item-divider *ngIf="types.course || types.category || types.group"></ion-item-divider>
     <ion-list radio-group [(ngModel)]="courseId" *ngIf="types.course || types.category || types.group">
         <ion-item text-wrap *ngFor="let course of courses" >
-            <ion-label><core-format-text [text]="course.fullname"></core-format-text></ion-label>
+            <ion-label *ngIf="course.id==-1">My Courses</ion-label>
+            <ion-label><core-format-text [text]="course.fullname" *ngIf="course.id!=-1"></core-format-text></ion-label>
             <ion-radio value="{{course.id}}" (ionSelect)="onChange($event)" ></ion-radio>
         </ion-item>
     </ion-list>

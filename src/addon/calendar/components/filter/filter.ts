@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { NavParams } from 'ionic-angular';
 import { CoreEventsProvider } from '@providers/events';
 import { AddonCalendarProvider } from '../../providers/calendar';
@@ -25,7 +25,7 @@ import { AddonCalendarHelperProvider, AddonCalendarFilter } from '../../provider
     selector: 'addon-calendar-filter-popover',
     templateUrl: 'addon-calendar-filter-popover.html'
 })
-export class AddonCalendarFilterPopoverComponent {
+export class AddonCalendarFilterPopoverComponent implements OnInit{
     courses: any[];
     courseId = -1;
 
@@ -74,5 +74,9 @@ export class AddonCalendarFilterPopoverComponent {
         filter['filtered'] = filter['courseId'] || AddonCalendarProvider.ALL_TYPES.some((name) => !this.types[name]);
 
         this.eventsProvider.trigger(AddonCalendarProvider.FILTER_CHANGED_EVENT, filter);
+    }
+
+    ngOnInit(){
+        console.log(this.courses)
     }
 }

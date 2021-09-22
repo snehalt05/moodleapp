@@ -160,6 +160,7 @@ export class CoreCourseFormatComponent implements OnInit, OnChanges, OnDestroy {
     ngOnInit(): void {
         this.displaySectionSelector = this.cfDelegate.displaySectionSelector(this.course);
         this.displayBlocks = this.cfDelegate.displayBlocks(this.course);
+        console.log(JSON.stringify(this.sections))
     }
 
     /**
@@ -214,6 +215,7 @@ export class CoreCourseFormatComponent implements OnInit, OnChanges, OnDestroy {
                 for (let i = 0; i < this.sections.length; i++) {
                     const section = this.sections[i];
                     if (this.compareSections(section, this.selectedSection)) {
+                        console.log(section);
                         newSection = section;
                         break;
                     }

@@ -14,8 +14,8 @@
 
         <div class="core-login-site-logo" *ngIf="!showSiteAvatar">
             <!-- Show site logo or a default image. -->
-            <img *ngIf="logoUrl" [src]="logoUrl" role="presentation" onError="this.src='assets/img/login_logo.png'">
-            <img *ngIf="!logoUrl" src="assets/img/login_logo.png" role="presentation">
+            <img *ngIf="logoUrl" src="assets/img/Rubiversity-Logo-New.png" role="presentation" onError="this.src='assets/img/Rubiversity-Logo-New.png'">
+            <img *ngIf="!logoUrl" src="assets/img/Rubiversity-Logo-New.png" role="presentation">
         </div>
 
         <!-- <h3 *ngIf="siteName" padding class="core-sitename"><core-format-text [text]="siteName" [filter]="false"></core-format-text></h3> -->
@@ -37,10 +37,10 @@
         <ion-grid padding>
             <ion-row>
                 <ion-col>
-                    <a ion-button block style="background-color:#50c6e0;" (click)="cancel($event)">{{ 'core.login.cancel' | translate }}</a>
+                    <a ion-button block  (click)="cancel($event)">{{ 'core.login.cancel' | translate }}</a>
                 </ion-col>
                 <ion-col>
-                    <button ion-button style="background-color:#50c6e0;" block [disabled]="!credForm.valid">{{ 'core.login.loginbutton' | translate }}</button>
+                    <button ion-button  block [disabled]="!credForm.valid">{{ 'core.login.loginbutton' | translate }}</button>
                 </ion-col>
             </ion-row>
         </ion-grid>
@@ -49,7 +49,8 @@
     <!-- Forgotten password button. -->
     <ion-list no-lines *ngIf="showForgottenPassword && !isOAuth" class="core-login-forgotten-password core-login-link">
         <a ion-item text-center text-wrap (click)="forgottenPassword()" detail-none>
-            {{ 'core.login.forgotten' | translate }}
+            Forgot Password?
+            <!-- {{ 'core.login.forgotten' | translate }} -->
         </a>
     </ion-list>
 

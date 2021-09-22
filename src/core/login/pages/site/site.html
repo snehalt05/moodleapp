@@ -12,7 +12,7 @@
 <ion-content padding>
     <div>
         <div text-center padding margin-bottom [class.hidden]="hasSites || enteredSiteUrl" class="core-login-site-logo">
-            <img src="assets/img/login_logo.png" class="avatar-full login-logo" role="presentation">
+            <img src="assets/img/Rubiversity-Logo-New.png" class="avatar-full login-logo" role="presentation">
         </div>
         <form ion-list [formGroup]="siteForm" (ngSubmit)="connect($event, siteForm.value.siteUrl)" *ngIf="!fixedSites" #siteFormEl>
             <!-- Form to input the site URL if there are no fixed sites. -->

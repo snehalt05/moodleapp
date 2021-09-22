@@ -15,8 +15,8 @@
   
   <ion-list *ngFor="let faq of  faqData;let i=index">
    <!--<ion-icon name={{icon}} (click)="iconClick(faq)"></ion-icon> -->
-   <div style="display: flex;color:white"><h3 (click)="faq['display']=!faq['display'];">{{faq.question}}</h3></div>
-   <p style="color:white;font-size: 18px;" *ngIf="faq['display']"><b>Ans –</b>{{faq.answers}}</p>
+   <div style="display: flex;color:black"><h5 (click)="faq['display']=!faq['display'];">{{faq.question}}</h5></div>
+   <p style="color:black;font-size:18px;" *ngIf="faq['display']">{{faq.answers}}</p>
   <hr style="color: black;font-size: 25px;">
   </ion-list>
   

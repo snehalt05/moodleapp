@@ -127,7 +127,7 @@ ion-app.app-root addon-calendar-calendar {
         }
 
         &.today .addon-calendar-day-number span {
-            background-color:#50c6e0;
+            background-color:#45b6fe;
             //  $calendar-today-bgcolor;
             color: $calendar-today-color;
 
@@ -224,7 +224,7 @@ ion-app.app-root addon-calendar-calendar {
         display: inline-block;
         vertical-align: bottom;
     }
-    .addon-calendar-navigation{
-        background-color:#50c6e0;
-    }
+    // .addon-calendar-navigation{
+    //     background-color:#45b6fe;
+    // }
 }

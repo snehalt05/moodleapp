@@ -1,12 +1,12 @@
 <ion-header>
     <ion-navbar core-back-button>
         <!-- <ion-title><core-format-text [text]="siteName" contextLevel="system" [contextInstanceId]="0"></core-format-text></ion-title> -->
-        <img src="assets/img/login_logo.png" class="core-header-logo" [alt]="siteName" style="display: inline-block;width:38%;margin-left: 10px;">        
+        <img src="assets/img/Rubiversity-Logo-New.png" class="core-header-logo" [alt]="siteName" style="display: inline-block;width:23%;margin-left: 10px;">        
     </ion-navbar>
 </ion-header>
 <ion-content>
     <ion-list>
-        <a ion-item core-user-link [userId]="siteInfo.userid" text-wrap style=" background-color:#50c6e0;">
+        <a ion-item core-user-link [userId]="siteInfo.userid" text-wrap>
             <ion-avatar core-user-avatar [user]="siteInfo" item-start></ion-avatar>
             <h2>{{siteInfo.fullname}}</h2>
             <!-- <ion-note class="core-note-block"><core-format-text [text]="siteName" contextLevel="system" [contextInstanceId]="0" [wsNotFiltered]="true"></core-format-text></ion-note>
