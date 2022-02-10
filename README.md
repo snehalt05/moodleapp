@@ -1,22 +1,51 @@
-Moodle Mobile
-=================
+# meetcs_lms
 
-This is the primary repository of source code for the official Moodle Mobile app.
+#run command
 
-* [User documentation](http://docs.moodle.org/en/Moodle_Mobile)
-* [Developer documentation](http://docs.moodle.org/dev/Moodle_Mobile)
-* [Development environment setup](http://docs.moodle.org/dev/Setting_up_your_development_environment_for_Moodle_Mobile_2)
-* [Bug Tracker](https://tracker.moodle.org/browse/MOBILE)
-* [Release Notes](http://docs.moodle.org/dev/Moodle_Mobile_Release_Notes)
+npx ionic-app-scripts serve -b --devapp --address=0.0.0.0
 
-License
--------
 
-[Apache 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+#regenerating platforms
 
-Big Thanks
------------
+#android
 
-Cross-browser Testing Platform and Open Source <3 Provided by [Sauce Labs](https://saucelabs.com)
+1)cordova plugin save
+2)cordova platform rm android
+3)cordova platform add android
+4)ionic cordova resources android --icon  
+5)ionic cordova resources android --splash
 
-![Sauce Labs Logo](https://user-images.githubusercontent.com/557037/43443976-d88d5a78-94a2-11e8-8915-9f06521423dd.png)
+6)ionic cordova prepare android
+
+7)ionic cordova build android
+
+        OR
+        
+7)ionic cordova build android  --aot --release
+
+8) jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-key.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk Admission-2-Alumni
+
+9) cd platforms/android/app/build/outputs/apk/release/
+
+10) C:\Users\aprus\AppData\Local\Android\Sdk\build-tools\28.0.3\zipalign.exe -v 4 app-release-unsigned.apk Admission-2-Alumni.apk
+#ios
+
+
+1)cordova plugin save
+2)cordova platform rm ios
+3)cordova platform add ios
+4)ionic cordova resources ios --icon  
+5)ionic cordova resources ios --splash
+
+
+#screeshot capturing 
+
+
+# MainActivity .java code to be put in 
+
+import android.view.WindowManager;
+
+
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE,
+                           WindowManager.LayoutParams.FLAG_SECURE);

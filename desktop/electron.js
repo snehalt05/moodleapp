@@ -1,6 +1,5 @@
-
 // dialog isn't used, but not requiring it throws an error.
-const {app, BrowserWindow, ipcMain, shell, dialog, Menu} = require('electron');
+const { app, BrowserWindow, ipcMain, shell, dialog, Menu } = require('electron');
 const path = require('path');
 const url = require('url');
 const fs = require('fs');
@@ -73,7 +72,7 @@ function createWindow() {
     // Add shortcut to open dev tools: Cmd + Option + I in MacOS, Ctrl + Shift + I in Windows/Linux.
     mainWindow.webContents.on('before-input-event', function(e, input) {
         if (input.type == 'keyDown' && !input.isAutoRepeat && input.code == 'KeyI' &&
-                ((isMac && input.alt && input.meta) || (!isMac && input.shift && input.control))) {
+            ((isMac && input.alt && input.meta) || (!isMac && input.shift && input.control))) {
             mainWindow.webContents.toggleDevTools();
         }
     }, true)
@@ -137,7 +136,7 @@ fs.readFile(path.join(__dirname, 'config.json'), 'utf8', (err, data) => {
             ssoScheme = data.customurlscheme;
             appName = data.desktopappname;
             appId = data.app_id;
-        } catch(ex) {}
+        } catch (ex) {}
     }
 
     // Set default protocol (custom URL scheme).
@@ -213,22 +212,18 @@ ipcMain.on('focusApp', focusApp);
 
 // Configure the app's menu.
 function setAppMenu() {
-    let menuTemplate = [
-        {
+    let menuTemplate = [{
             label: appName,
             role: 'window',
-            submenu: [
-                {
-                    label: 'Quit',
-                    accelerator: 'CmdorCtrl+Q',
-                    role: 'close'
-                }
-            ]
+            submenu: [{
+                label: 'Quit',
+                accelerator: 'CmdorCtrl+Q',
+                role: 'close'
+            }]
         },
         {
             label: 'Edit',
-            submenu: [
-                {
+            submenu: [{
                     label: 'Cut',
                     role: 'cut'
                 },
@@ -249,15 +244,13 @@ function setAppMenu() {
         {
             label: 'Help',
             role: 'help',
-            submenu: [
-                {
-                    label: 'Docs',
-                    accelerator: 'CmdOrCtrl+H',
-                    click() {
-                        shell.openExternal('https://docs.moodle.org/en/Moodle_Mobile');
-                    }
+            submenu: [{
+                label: 'Docs',
+                accelerator: 'CmdOrCtrl+H',
+                click() {
+                    shell.openExternal('https://docs.moodle.org/en/Moodle_Mobile');
                 }
-            ]
+            }]
         }
     ];
 

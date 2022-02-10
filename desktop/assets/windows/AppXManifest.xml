@@ -6,11 +6,11 @@
   <Identity Name="3312ADB7.MoodleDesktop"
     ProcessorArchitecture="x64"
     Publisher="CN=33CDCDF6-1EB5-4827-9897-ED25C91A32F6"
-    Version="3.9.4.0" />
+    Version="3.9.2.0" />
   <Properties>
-    <DisplayName>Moodle Desktop</DisplayName>
-    <PublisherDisplayName>Moodle Pty Ltd.</PublisherDisplayName>
-    <Description>The official app for Moodle.</Description>
+    <DisplayName>MEETCS LMS Desktop</DisplayName>
+    <PublisherDisplayName>MEETCS </PublisherDisplayName>
+    <Description>The official app for MEETCS LMS.</Description>
     <Logo>assets\StoreLogo.png</Logo>
   </Properties>
   <Resources>
@@ -23,19 +23,19 @@
     <rescap:Capability Name="runFullTrust"/>
   </Capabilities>
   <Applications>
-    <Application Id="com.moodle.moodlemobile" Executable="app\Moodle Desktop.exe" EntryPoint="Windows.FullTrustApplication">
+    <Application Id="com.rubiversity.mobileapp" Executable="app\Moodle Desktop.exe" EntryPoint="Windows.FullTrustApplication">
       <uap:VisualElements
        BackgroundColor="#464646"
-       DisplayName="Moodle Desktop"
+       DisplayName="MEETCS LMS Desktop"
        Square150x150Logo="assets\Square150x150Logo.png"
        Square44x44Logo="assets\Square44x44Logo.png"
-       Description="Moodle Desktop: The official desktop app for Moodle.">
+       Description="MEETCS LMS Desktop: The official desktop app for MEETCS LMS.">
         <uap:DefaultTile Wide310x150Logo="assets\Wide310x150Logo.png" />
       </uap:VisualElements>
       <Extensions>
         <uap:Extension Category="windows.protocol">
           <uap:Protocol Name="moodlemobile">
-            <uap:DisplayName>Moodle Mobile URI Scheme</uap:DisplayName>
+            <uap:DisplayName>MEETCS LMS URI Scheme</uap:DisplayName>
           </uap:Protocol>
         </uap:Extension>
       </Extensions>

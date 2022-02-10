@@ -135,7 +135,7 @@ export class CoreMainMenuMorePage implements OnDestroy {
 
         this.mainMenuProvider.getCustomMenuItems().then((items) => {
             this.customItems = items;
-            console.log(this.customItems)
+            console.log("menu items",this.customItems)
         });
     }
 
